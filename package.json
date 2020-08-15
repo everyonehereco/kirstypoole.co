@@ -5,7 +5,7 @@
     "author": "Damian Poole",
     "dependencies": {
         "bulma": "^0.9.0",
-        "gatsby": "^2.20.35",
+        "gatsby": "^2.24.47",
         "gatsby-image": "^2.3.5",
         "gatsby-plugin-netlify": "^2.2.4",
         "gatsby-plugin-netlify-cms": "^4.2.5",
@@ -48,5 +48,8 @@
     },
     "devDependencies": {
         "prettier": "^2.0.5"
+    },
+    "resolutions": {
+        "babel-plugin-remove-graphql-queries": "2.9.9"
     }
 }
