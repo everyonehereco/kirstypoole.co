@@ -4,95 +4,90 @@ import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
 const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
+    constructor(props) {
+        super(props)
+        this.state = {
+            active: false,
+            navBarActiveClass: '',
+        }
     }
-  }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+    toggleHamburger = () => {
+        // toggle the active boolean in the state
+        this.setState(
+            {
+                active: !this.state.active,
+            },
+            // after state has been updated,
+            () => {
+                // set the class in state for the navbar accordingly
+                this.state.active
+                    ? this.setState({
+                          navBarActiveClass: 'is-active',
+                      })
+                    : this.setState({
+                          navBarActiveClass: '',
+                      })
+            },
+        )
+    }
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
+    render() {
+        return (
+            <div className="container lg mx-auto flex flex-row mt-6">
+                <div class="w-full">
+                    <h1 class="block text-5xl">Kirsty Poole</h1>
+                    <svg class="block w-2/5 h-1">
+                        <path
+                            stroke="#666"
+                            stroke-width="3"
+                            d="M.742 1.5h294.689"
+                        />
+                    </svg>
+                </div>
+                <nav
+                    aria-label="main"
+                    class="flex-1 flex justify-end self-center"
+                >
+                    {/* Hamburger menu */}
+                    <div
+                        className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+                        data-target="navMenu"
+                        onClick={() => this.toggleHamburger()}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </div>
+                    <div
+                        id="navMenu"
+                        className={`navbar-menu ${this.state.navBarActiveClass}`}
+                    >
+                        <div className="navbar-start">
+                            <Link
+                                className="navbar-item text-xl ml-10 py-2"
+                                to="/"
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                className="navbar-item text-xl ml-10 py-2"
+                                to="/blog"
+                            >
+                                Blog
+                            </Link>
+                            <Link
+                                className="navbar-item text-xl ml-10 py-2"
+                                to="/about"
+                            >
+                                About
+                            </Link>
+                        </div>
+                    </div>
+                </nav>
             </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
+        )
+    }
 }
 
 export default Navbar

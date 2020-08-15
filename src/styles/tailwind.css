@@ -3,3 +3,29 @@
 @tailwind components;
 
 @tailwind utilities;
+
+[aria-current='page'] {
+    @apply border-b-2 border-gray-700;
+}
+
+.markdown {
+    > * + * {
+        @apply mt-6;
+    }
+
+    ul {
+        @apply list-disc px-6;
+    }
+
+    li {
+        @apply mt-2;
+    }
+
+    a {
+        @apply text-orange-600;
+    }
+
+    a:hover {
+        @apply text-orange-900 underline;
+    }
+}
