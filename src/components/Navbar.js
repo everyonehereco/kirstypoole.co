@@ -34,10 +34,10 @@ const Navbar = class extends React.Component {
 
     render() {
         return (
-            <div className="container lg mx-auto flex flex-row mt-6">
-                <div class="w-full">
+            <div className="container block lg mx-auto md:flex flex-row pt-6">
+                <div class="w-full mx-2">
                     <h1 class="block text-5xl">Kirsty Poole</h1>
-                    <svg class="block w-2/5 h-1">
+                    <svg class="block w-4/5 md:w-3/5 lg:w-2/5 h-1">
                         <path
                             stroke="#666"
                             stroke-width="3"
@@ -47,7 +47,7 @@ const Navbar = class extends React.Component {
                 </div>
                 <nav
                     aria-label="main"
-                    class="flex-1 flex justify-end self-center"
+                    class="mt-6 flex-1 flex md:justify-end md:self-center md:mt-0"
                 >
                     {/* Hamburger menu */}
                     <div
@@ -65,7 +65,7 @@ const Navbar = class extends React.Component {
                     >
                         <div className="navbar-start">
                             <Link
-                                className="navbar-item text-xl ml-10 py-2"
+                                className="navbar-item text-xl ml-2 md:ml-10 py-2"
                                 to="/"
                             >
                                 Home

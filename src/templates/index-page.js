@@ -9,11 +9,11 @@ import BlogCard from '../components/BlogCard'
 export const IndexPageTemplate = ({ image, body, posts }) => (
     <>
         <div class="container lg mx-auto mt-12">
-            <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-7">
+            <div class="grid grid-cols-12 gap-4 mx-2">
+                <div class="col-span-12 md:col-span-7">
                     <HTMLContent content={body} />
                 </div>
-                <div class="col-span-5 flex justify-end">
+                <div class="hidden md:justify-end md:flex md:col-span-5">
                     <img
                         class="w-84 shadow-lg"
                         src={image.childImageSharp.fluid.src}
@@ -23,10 +23,10 @@ export const IndexPageTemplate = ({ image, body, posts }) => (
         </div>
         <div class="bg-gray-600 bg-opacity-50 mt-10 pb-16">
             <div class="container lg mx-auto">
-                <h2 class="py-8 text-3xl font-semibold flex justify-center">
+                <h2 class="py-8 text-3xl font-semibold flex justify-center mx-2">
                     Blog
                 </h2>
-                <div class="grid grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 gap-6 mx-2 md:grid-cols-3">
                     {posts &&
                         posts.map(({ node: post }) => {
                             return (
