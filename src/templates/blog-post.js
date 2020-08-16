@@ -23,23 +23,9 @@ export const BlogPostTemplate = ({
                 <img src={img} class="object-cover h-56 w-full" />
             </div>
             {helmet || ''}
-            <div className="container lg mx-auto pb-6">
+            <div className="container lg mx-auto pb-6 px-2">
                 <h1 className="font-semibold text-3xl mt-8 mb-6">{title}</h1>
                 <PostContent className="markdown" content={content} />
-                {tags && tags.length ? (
-                    <div class="mt-6">
-                        <h4>Tags</h4>
-                        <ul class="list-disc">
-                            {tags.map((tag) => (
-                                <li key={tag + `tag`}>
-                                    <Link to={`/tags/${kebabCase(tag)}/`}>
-                                        {tag}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ) : null}
             </div>
         </section>
     )
@@ -96,7 +82,6 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 title
                 description
-                tags
                 featuredimage {
                     childImageSharp {
                         fluid(maxWidth: 1000, quality: 100) {

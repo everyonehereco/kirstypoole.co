@@ -35,7 +35,7 @@ const Navbar = class extends React.Component {
     render() {
         return (
             <div className="container block lg mx-auto md:flex flex-row pt-6">
-                <div class="w-full mx-2">
+                <div class="w-full px-2">
                     <h1 class="block text-5xl">Kirsty Poole</h1>
                     <svg class="block w-4/5 md:w-3/5 lg:w-2/5 h-1">
                         <path
