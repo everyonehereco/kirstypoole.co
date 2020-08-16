@@ -1,14 +1,16 @@
 ---
-templateKey: 'blog-post'
-title: 'Just in: small batch of Jamaican Blue Mountain in store next week just making the title a little longer so that it creates a large card'
+templateKey: blog-post
+title: "Just in: small batch of Jamaican Blue Mountain in store next week just
+  making the title a little longer so that it creates a large card"
 date: 2017-01-04T15:04:10.000Z
-featuredimage: /img/blogthumbnail.jpg
 description: Testing
+featuredpost: true
+featuredimage: /img/financial-force-2018-06-29-15.jpg
 tags:
-    - jamaica
-    - green beans
-    - flavor
-    - tasting
+  - jamaica
+  - green beans
+  - flavor
+  - tasting
 ---
 
 We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
