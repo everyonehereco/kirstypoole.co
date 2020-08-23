@@ -8,7 +8,17 @@
     @apply border-b-2 border-gray-700;
 }
 
+@responsive {
+    .text-shadow {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
+}
+
 .markdown {
+    * {
+        @apply font-light;
+    }
+
     > * + * {
         @apply mt-6;
     }
@@ -27,5 +37,54 @@
 
     a:hover {
         @apply text-orange-900 underline;
+    }
+
+    h2 {
+        @apply text-xl font-semibold;
+    }
+
+    blockquote {
+        @apply relative text-3xl font-normal text-center px-0 py-4 my-16;
+    }
+
+    blockquote:before {
+        content: '';
+        background: black;
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 20%;
+        height: 1px;
+    }
+
+    blockquote:after {
+        content: '';
+        background: black;
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        width: 20%;
+        height: 1px;
+    }
+
+    blockquote p:before {
+        content: '\201C';
+    }
+
+    blockquote p:after {
+        content: '\201D';
+    }
+
+    blockquote {
+        * {
+            @apply px-0;
+        }
+    }
+}
+
+.post {
+    > *,
+    ul {
+        @apply px-24;
     }
 }

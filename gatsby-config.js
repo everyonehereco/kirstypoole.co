@@ -55,6 +55,18 @@ module.exports = {
                             destinationDir: 'static',
                         },
                     },
+                    `gatsby-remark-reading-time`,
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Roboto`,
+                        variants: [`300`, `400`, `500`, `600`, `700`, `800`],
+                    },
                 ],
             },
         },

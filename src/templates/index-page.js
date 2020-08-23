@@ -8,25 +8,32 @@ import BlogCard from '../components/BlogCard'
 
 export const IndexPageTemplate = ({ image, body, posts }) => (
     <>
-        <div class="container lg mx-auto mt-12">
-            <div class="grid grid-cols-12 gap-4 mx-2">
-                <div class="col-span-12 md:col-span-7">
-                    <HTMLContent content={body} />
+        <div class="container lg mx-auto mt-16 px-8">
+            <div class="grid grid-cols-2 gap-6 mx-2">
+                <div>
+                    <h1 class="text-5xl pr-4 border-b-4 border-gray-700 inline-block font-semibold">
+                        Kirsty Poole
+                    </h1>
+                    <div className="mt-6">
+                        <HTMLContent className="markdown" content={body} />
+                    </div>
                 </div>
-                <div class="hidden md:justify-end md:flex md:col-span-5">
-                    <img
-                        class="w-84 shadow-lg"
-                        src={image.childImageSharp.fluid.src}
-                    />
+                <div class="md:justify-end md:flex ">
+                    <div
+                        class="w-full bg-cover bg-center"
+                        style={{
+                            backgroundImage: `url(${image.childImageSharp.fluid.src})`,
+                        }}
+                    ></div>
                 </div>
             </div>
         </div>
-        <div class="bg-gray-600 bg-opacity-50 mt-10 pb-16">
+        <div class="bg-base-gray mt-16 pb-16 px-8">
             <div class="container lg mx-auto">
-                <h2 class="py-8 text-3xl font-semibold flex justify-center mx-2">
+                <h2 class="py-10 text-5xl font-semibold flex justify-center mx-2">
                     Blog
                 </h2>
-                <div class="grid grid-cols-1 gap-6 mx-2 md:grid-cols-3">
+                <div class="grid grid-cols-2 gap-6 mx-2 pt-16">
                     {posts &&
                         posts.map(({ node: post }) => {
                             return (

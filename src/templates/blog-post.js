@@ -10,22 +10,43 @@ export const BlogPostTemplate = ({
     content,
     contentComponent,
     description,
-    tags,
     title,
     helmet,
     img,
+    date,
+    readingTime,
 }) => {
     const PostContent = contentComponent || Content
 
     return (
-        <section className="mt-10">
-            <div>
-                <img src={img} class="object-cover h-56 w-full" />
+        <section>
+            <div class="h-10 bg-black w-full">
+                <div className="flex container lg mx-auto px-8 h-full items-center">
+                    <a
+                        className="align-middle text-white text-sm font-light"
+                        href="/"
+                    >
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+            <div
+                className="bg-cover bg-center h-64 w-full text-center"
+                style={{
+                    backgroundImage: `url(${img})`,
+                }}
+            >
+                <h1 className="font-semibold text-white text-5xl text-shadow pt-12">
+                    {title}
+                </h1>
+                <p className="text-white text-shadow pt-8">{description}</p>
             </div>
             {helmet || ''}
-            <div className="container lg mx-auto pb-6 px-2">
-                <h1 className="font-semibold text-3xl mt-8 mb-6">{title}</h1>
-                <PostContent className="markdown" content={content} />
+            <div className="container lg mx-auto py-12 mt-4 px-8">
+                <p class="text-xs font-normal my-4 px-24">
+                    {date} - {readingTime}
+                </p>
+                <PostContent className="markdown post" content={content} />
             </div>
         </section>
     )
@@ -58,8 +79,9 @@ const BlogPost = ({ data }) => {
                     </Helmet>
                 }
                 img={post.frontmatter.featuredimage.childImageSharp.fluid.src}
-                tags={post.frontmatter.tags}
                 title={post.frontmatter.title}
+                date={post.frontmatter.date}
+                readingTime={post.fields.readingTime.text}
             />
         </Layout>
     )
@@ -88,6 +110,11 @@ export const pageQuery = graphql`
                             ...GatsbyImageSharpFluid
                         }
                     }
+                }
+            }
+            fields {
+                readingTime {
+                    text
                 }
             }
         }
